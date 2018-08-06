@@ -1,7 +1,33 @@
-.card {
-  margin: 15px;
-}
+/*.card {*/
+  /*margin: 15px;*/
+/*}*/
 
 .container {
   text-align: center;
+}
+
+.explanation {
+  display: grid;
+  grid-gap: 10px;
+  /*grid-template-columns: 100px 100px 100px;*/
+  background-color: #fff;
+  color: #444;
+}
+
+.exp {
+  background-color: #444;
+  color: #fff;
+  /*border-radius: 5px;*/
+  padding: 20px;
+  font-size: 150%;
+}
+
+.left {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+.right {
+  grid-column: 4;
+  grid-row: 1;
 }

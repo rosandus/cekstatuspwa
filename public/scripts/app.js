@@ -2,18 +2,30 @@
   'use strict';
 
   window.onload = function() {
-    let message = localStorage.getItem("message") || 'Your message will display here';
-    $('#message').html(message);
-    $('#display').html(message);
-  }
+      function updateBatteryStatus(battery) {
+          document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
+          document.querySelector('#level').textContent = battery.level * 100 + "%";
+          document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60;
+      }
 
-  $('#button').click(() => {
-    console.log('click')
-    let message = $('#message').val();
-    console.log(message);
-    $('#display').html(message);
-    localStorage.setItem("message", message);
-  });
+      navigator.getBattery().then(function (battery) {
+          // Update the battery status initially when the promise resolves ...
+          updateBatteryStatus(battery);
+
+          // .. and for any subsequent updates.
+          battery.onchargingchange = function () {
+              updateBatteryStatus(battery);
+          };
+
+          battery.onlevelchange = function () {
+              updateBatteryStatus(battery);
+          };
+
+          battery.ondischargingtimechange = function () {
+              updateBatteryStatus(battery);
+          };
+      });
+  };
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker

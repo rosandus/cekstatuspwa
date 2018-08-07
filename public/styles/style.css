@@ -1,33 +1,85 @@
 /*.card {*/
-  /*margin: 15px;*/
+/*margin: 15px;*/
 /*}*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 .container {
-  text-align: center;
+    /*text-align: center;*/
+    margin-top: 20px;
 }
 
-.explanation {
-  display: grid;
-  grid-gap: 10px;
-  /*grid-template-columns: 100px 100px 100px;*/
-  background-color: #fff;
-  color: #444;
+.rowexp {
+    /*display: grid;*/
+    /*grid-gap: 10px;*/
+    /*grid-template-columns: 100px 100px 100px;*/
+    background-color: #fff;
+    color: #444;
+    display: block;
 }
+
 
 .exp {
-  background-color: #444;
-  color: #fff;
-  /*border-radius: 5px;*/
-  padding: 20px;
-  font-size: 150%;
+    background-color: #000aeca1;
+    color: #fff;
+    padding: 5px;
+    font-size: 100%;
+    margin: 10px;
+    float: left;
+    padding-right: 10px;
 }
 
-.left {
-  grid-column: 1 / 4;
-  grid-row: 1;
+.leftexp {
+    /*grid-column: 1 / 4;*/
+    /*grid-row: 1;*/
+    width: 70%;
+    height: 100%;
 }
 
-.right {
-  grid-column: 4;
-  grid-row: 1;
+.rightexp {
+    /*grid-column: 4;*/
+    /*grid-row: 1;*/
+    width: 25%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 380px)
+{
+    nav .brand-logo {
+        font-size:24px;
+    }
+    .exp {
+        font-size: 12px;
+    }
+    .leftexp {
+        margin: 3px;
+        width:60%;
+    }
+
+    .rightexp {
+        margin: 3px;
+        width:30%;
+    }
+}
+
+@media only screen and (max-width: 420px)
+{
+    nav .brand-logo {
+        font-size:24px;
+    }
+    .exp {
+        font-size: 12px;
+    }
+    .leftexp {
+        margin: 3px;
+        width:60%;
+    }
+
+    .rightexp {
+        margin: 3px;
+        width:35%;
+    }
 }

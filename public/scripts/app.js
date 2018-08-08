@@ -2,8 +2,19 @@
   'use strict';
 
   window.onload = function() {
+
       // Connection Status
       document.getElementById('connectionstatus').innerHTML = navigator.onLine ? 'Online' : 'Offline';
+
+      // Rear Camera Status
+      checkCamera();
+      function checkCamera() {
+          if ('ImageCapture' in window) {
+              document.querySelector('#camerastatus').textContent = 'Yes';
+          } else {
+              document.querySelector('#camerastatus').textContent = 'No';
+          }
+      };
 
       // Accelerometer Status
       // document.getElementById('accestatus').innerHTML = navigator.onLine ? 'Online' : 'Offline';
@@ -16,6 +27,7 @@
           // window.addEventListener("devicemotion", accelerometerUpdate, true);
       }
 
+      // Bluetooth Status
       checkBluetooth();
       function checkBluetooth() {
           if ('bluetooth' in navigator) {
@@ -71,6 +83,7 @@
       }
 
       // Front Camera
+      getStream();
       // function getUserMedia(options, successCallback, failureCallback) {
       //     var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
       //         navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -78,16 +91,16 @@
       //         return api.bind(navigator)(options, successCallback, failureCallback);
       //     }
       // }
-      //
-      // function getStream() {
-      //     if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
-      //         !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
-      //         document.querySelector('#frontcamerastatus').textContent = 'No';
-      //         return;
-      //     } else {
-      //         document.querySelector('#frontcamerastatus').textContent = 'Yes';
-      //     }
-      // }
+
+      function getStream() {
+          if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
+              !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
+              document.querySelector('#frontcamerastatus').textContent = 'No';
+              return;
+          } else {
+              document.querySelector('#frontcamerastatus').textContent = 'Yes';
+          }
+      }
 
       // GPS
       checkGps();
@@ -98,6 +111,8 @@
               document.querySelector('#gpsstatus').textContent = 'No';
           }
       };
+
+
   };
 
   if ('serviceWorker' in navigator) {

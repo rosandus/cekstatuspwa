@@ -32,18 +32,26 @@
   <body>
 
     <nav>
-      <div class="nav-wrapper blue darken-4">
-        <a href="#" class="brand-logo center">Check Webview</a>
-      </div>
+        <div class="nav-wrapper blue darken-4">
+            <a href="#" class="brand-logo center">Check Webview</a>
+        </div>
     </nav>
 
     <main class="container">
+        <div class="rowexp">
+            <div class="exp leftexp">
+                Connection
+            </div>
+            <div class="exp rightexp">
+                <div id="connectionstatus">Unknown</div>
+            </div>
+        </div>
       <div class="rowexp">
         <div class="exp leftexp">
-          Access to Front/Rear Camera
+            Access to Front/Rear Camera
         </div>
         <div class="exp rightexp">
-          Yes/No
+            <div id="frontcamerastatus">Unknown</div>
         </div>
       </div>
       <div class="rowexp">
@@ -51,7 +59,7 @@
           Connectivity Type
         </div>
         <div class="exp rightexp">
-          Yes/No
+          <div id="connectivitytpe">Unknown</div>
         </div>
       </div>
       <div class="rowexp">
@@ -59,7 +67,7 @@
           Bluetooth Connectivity
         </div>
         <div class="exp rightexp">
-          Yes/No
+          <div id="bluetoothstatus">Unknown</div>
         </div>
       </div>
       <div class="rowexp">
@@ -67,7 +75,7 @@
           Charging Status Battery
         </div>
         <div class="exp rightexp">
-          <div id="charging">(charging state unknown)</div>
+          <div id="charging">Unknown</div>
         </div>
       </div>
       <div class="rowexp">
@@ -75,7 +83,7 @@
           Battery Level
         </div>
         <div class="exp rightexp">
-          <div id="level">(battery level unknown)</div>
+          <div id="level">Unknown</div>
           <!--<div id="dischargingTime">(discharging time unknown)</div>-->
         </div>
       </div>
@@ -108,7 +116,7 @@
           Accelerometer
         </div>
         <div class="exp rightexp">
-          Yes/No
+            <div id="accestatus">Unknown</div>
         </div>
       </div>
       <div class="rowexp">
@@ -116,7 +124,7 @@
           GPS Working
         </div>
         <div class="exp rightexp">
-          Yes/No
+          <div id="gpsstatus">Unknown</div>
         </div>
       </div>
     </main>

@@ -1,5 +1,5 @@
-var dataCacheName = 'template-pwa';
-var cacheName = 'template-pwa';
+var dataCacheName = 'checkstatuspwa';
+var cacheName = 'checkstatuspwa';
 var filesToCache = [
   '/',
  "./fonts",

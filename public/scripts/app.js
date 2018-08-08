@@ -112,7 +112,15 @@
           }
       };
 
-
+      // Tap Status
+      checkTap();
+      function checkTap() {
+          if ('ontouchstart' in window){
+              document.querySelector('#tapstatus').textContent = 'Yes';
+          } else {
+              document.querySelector('#tapstatus').textContent = 'No';
+          }
+      };
   };
 
   if ('serviceWorker' in navigator) {

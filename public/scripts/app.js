@@ -28,6 +28,10 @@
       //     }
       // };
 
+      // Tap Status
+      // document.getElementById('touchable').addEventListener('touchstart', handleStart, false);
+      document.getElementById('tapstatus').addEventListener().innerHTML = document.documentElement.ontouchstart ? 'Yes' : 'No';
+
       // Accelerometer Status
       document.getElementById('accestatus').innerHTML = window.Accelerometer ? 'Yes' : 'No';
       // if (window.Accelerometer == undefined) {
@@ -165,41 +169,21 @@
           updateNetworkInfo(info);
       }
 
-      // Front Camera
-      // getStream();
-      // function getUserMedia(options, successCallback, failureCallback) {
-      //     var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-      //         navigator.mozGetUserMedia || navigator.msGetUserMedia;
-      //     if (api) {
-      //         return api.bind(navigator)(options, successCallback, failureCallback);
-      //     }
-      // }
-
-      // function getStream() {
-      //     if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
-      //         !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
-      //         document.querySelector('#frontcamerastatus').textContent = 'No';
-      //         return;
-      //     } else {
-      //         document.querySelector('#frontcamerastatus').textContent = 'Yes';
-      //     }
-      // }
-
       // Tap Status
-      checkTap();
-      // let isTouchCapable = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-      // let isTouchCapable = 'ontouchstart' in window ||
-      //     window.DocumentTouch && document instanceof window.DocumentTouch ||
-      //     navigator.maxTouchPoints ||
-      //     window.navigator.msMaxTouchPoints || 'onmsgesturechange' in window || window.navigator.msMaxTouchPoints;
-      function checkTap() {
-          if (isTouchCapable){
-              document.addEventListener('touchstart', myTouchFunction, false);
-              document.querySelector('#tapstatus').textContent = 'Yes';
-          } else {
-              document.querySelector('#tapstatus').textContent = 'No';
-          }
-      };
+      // checkTap();
+      // // let isTouchCapable = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+      // // let isTouchCapable = 'ontouchstart' in window ||
+      // //     window.DocumentTouch && document instanceof window.DocumentTouch ||
+      // //     navigator.maxTouchPoints ||
+      // //     window.navigator.msMaxTouchPoints || 'onmsgesturechange' in window || window.navigator.msMaxTouchPoints;
+      // function checkTap() {
+      //     if (isTouchCapable){
+      //         document.addEventListener('touchstart', myTouchFunction, false);
+      //         document.querySelector('#tapstatus').textContent = 'Yes';
+      //     } else {
+      //         document.querySelector('#tapstatus').textContent = 'No';
+      //     }
+      // };
   };
 
   if ('serviceWorker' in navigator) {

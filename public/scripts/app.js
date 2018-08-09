@@ -17,8 +17,11 @@
       //     }
       // };
 
+      // Front Camera Status
+      document.getElementById('frontcamerastatus').innerHTML = window.ImageCapture ? 'Yes' : 'No';
+
       // Rear Camera Status
-      document.getElementById('camerastatus').innerHTML = window.ImageCapture ? 'Yes' : 'No';
+      document.getElementById('rearcamerastatus').innerHTML = navigator.mediaDevices || navigator.mediaDevices.enumerateDevices ? 'Yes' : 'No';
       // checkCamera();
       // function checkCamera() {
       //     if ('ImageCapture' in window) {
@@ -30,7 +33,7 @@
 
       // Tap Status
       // document.getElementById('touchable').addEventListener('touchstart', handleStart, false);
-      document.getElementById('tapstatus').addEventListener().innerHTML = document.documentElement.ontouchstart ? 'Yes' : 'No';
+      // document.getElementById('tapstatus').addEventListener().innerHTML = document.documentElement.ontouchstart ? 'Yes' : 'No';
 
       // Accelerometer Status
       document.getElementById('accestatus').innerHTML = window.Accelerometer ? 'Yes' : 'No';
@@ -152,7 +155,7 @@
           };
       });
 
-      // Connectivity Type
+      // // Connectivity Type
       function getConnection() {
           return navigator.connection || navigator.mozConnection ||
               navigator.webkitConnection || navigator.msConnection;

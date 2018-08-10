@@ -1,6 +1,6 @@
 {
   "name": "Cek Status PWA",
-  "short_name": "Cek Status PWA",
+  "short_name": "statuspwa",
   "icons": [{
     "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",

@@ -32,6 +32,12 @@
     transition: all 400ms ease-in-out;
     box-shadow: 0 0px 5px 0 rgba(0,0,0,0);
 }
+
+#showlocation, #getlocation {
+    display: -moz-grid-line;
+    display: inline;
+}
+
 @-webkit-keyframes Gradient {
     0% {
         background-position: 0% 50%

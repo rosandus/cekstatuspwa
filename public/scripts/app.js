@@ -267,9 +267,12 @@ lockScreen();
         }
     });
 
+// Show Add to Home Screen if previously dismiss
+
+
 // Check notifcation was blocked
 if (Notification.permission !== "granted") {
-    setTimeout(function() { alert("The notification is disabled"); }, 3000);
+    setTimeout(function() { alert("The notification is disabled"); }, 4000);
 }
 // } else {
 //     alert("The notification is allowed");

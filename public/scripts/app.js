@@ -269,7 +269,7 @@ lockScreen();
 
 // Check notifcation was blocked
 if (Notification.permission !== "granted") {
-    alert("The notification is disabled");
+    setTimeout(function() { alert("The notification is disabled"); }, 3000);
 }
 // } else {
 //     alert("The notification is allowed");

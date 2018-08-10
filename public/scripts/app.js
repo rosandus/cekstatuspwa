@@ -213,15 +213,15 @@ lockScreen();
 // };
 
 // ENABLE GPS
-navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
-    if(PermissionStatus.state == 'granted'){
-        //allowed
-        console.log("Hahaha bisa kok");
-    }else{
-        //denied
-        console.log("TIDAK BISA");
-    }
-});
+// navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
+//     if(PermissionStatus.state == 'granted'){
+//         //allowed
+//         console.log("Hahaha bisa kok");
+//     }else{
+//         //denied
+//         console.log("TIDAK BISA");
+//     }
+// });
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker

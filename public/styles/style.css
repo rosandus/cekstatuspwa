@@ -12,6 +12,9 @@
     margin-top: 20px;
 }
 
+#getlocation {
+
+}
 .rowexp {
     /*display: grid;*/
     /*grid-gap: 10px;*/
@@ -83,3 +86,52 @@
         width:35%;
     }
 }
+
+/*@media screen*/
+/*and (orientation: landscape) {*/
+
+    /*nav {*/
+        /*-webkit-transform: rotate(-90deg);*/
+        /*-moz-transform: rotate(-90deg);*/
+        /*-o-transform: rotate(-90deg);*/
+        /*-ms-transform: rotate(-90deg);*/
+        /*transform: rotate(-90deg);*/
+        /*position: relative;*/
+        /*width: 100%;*/
+        /*bottom: -170px;*/
+        /*left: -335px;*/
+        /*overflow: hidden;*/
+    /*}*/
+
+    /*.nav-wrapper {*/
+        /*position: relative;*/
+        /*width: 100%;*/
+        /*overflow: hidden;*/
+
+    /*}*/
+
+    /*.exp {*/
+        /*position: relative;*/
+        /*width: 100%;*/
+        /*overflow: hidden;*/
+        /*left: -15px;*/
+        /*bottom: 250px;*/
+    /*}*/
+
+    /*.rowexp {*/
+        /*-webkit-transform: rotate(-90deg);*/
+        /*-moz-transform: rotate(-90deg);*/
+        /*-o-transform: rotate(-90deg);*/
+        /*-ms-transform: rotate(-90deg);*/
+        /*transform: rotate(-90deg);*/
+    /*}*/
+
+    /*.leftexp {*/
+        /*width: 35%;*/
+    /*}*/
+
+    /*.rightexp {*/
+        /*width: 24%;*/
+    /*}*/
+
+/*}*/

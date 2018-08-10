@@ -26,6 +26,8 @@ var filesToCache = [
  "./scripts",
  "./scripts/app.js",
  "./scripts/jquery-3.3.1.js",
+ "./scripts/apigmaps.js",
+ "./scripts/jquery-3.3.1.min.js",
  "./scripts/materialize.js",
  "./service-worker.js",
  "./styles",

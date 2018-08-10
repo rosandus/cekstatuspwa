@@ -189,6 +189,40 @@
       // };
   };
 
+// LOCK SCREEN
+const lockScreen = () => {
+    if (window.screen.orientation.type == "portrait") {
+        document.documentElement.requestFullScreen();
+        screen.orientation.lock("portrait-primary");
+    };
+};
+lockScreen();
+// screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+// screen.lockOrientationUniversal("portrait");
+// if (screen.lockOrientationUniversal("landscape-primary")) {
+//     // orientation was locked
+// } else {
+//     // orientation lock failed
+// }
+// let lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+// lockOrientation("portrait-primary");
+
+// if (window.screen.orientation.type == "portrait-primary") {
+//     console.log("Benar");
+//     window.screen.orientation.lock(window.screen.orientation.type);
+// };
+
+// ENABLE GPS
+navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
+    if(PermissionStatus.state == 'granted'){
+        //allowed
+        console.log("Hahaha bisa kok");
+    }else{
+        //denied
+        console.log("TIDAK BISA");
+    }
+});
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./service-worker.js')

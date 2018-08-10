@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 
     <script type="text/javascript" src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="scripts/apigmaps.js"></script>
+
 
     <link rel="manifest" href="/manifest.json">
 
@@ -38,6 +41,8 @@
     </nav>
 
     <main class="container">
+      <button id="getlocation" class="exp">Access Location</button>
+      <div id="showlocation"></div>
         <div class="rowexp">
             <div class="exp leftexp">
                 Connection
@@ -103,14 +108,14 @@
           <div id="devicestatus">Unknown</div>
         </div>
       </div>
-      <div class="rowexp">
-        <div class="exp leftexp">
-          The tap can be performed on all area of the screen
-        </div>
-        <div class="exp rightexp">
-            <div id="tapstatus">Unknown</div>
-        </div>
-      </div>
+      <!--<div class="rowexp">-->
+        <!--<div class="exp leftexp">-->
+          <!--The tap can be performed on all area of the screen-->
+        <!--</div>-->
+        <!--<div class="exp rightexp">-->
+            <!--<div id="tapstatus">Unknown</div>-->
+        <!--</div>-->
+      <!--</div>-->
       <div class="rowexp">
         <div class="exp leftexp">
           Accelerometer

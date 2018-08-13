@@ -7,15 +7,19 @@
     box-sizing: border-box;
 }
 
-.container {
-    /*text-align: center;*/
-    margin-top: 20px;
+main {
+    margin: 20px;
 }
+/*.container {*/
+/*margin-top: 20px;*/
+/*}*/
 
 .getButton {
-    margin: 10px;
+    position: relative;
+    left: 40%;
+    margin: 50px 0px 0px;
     line-height: 40px;
-    padding: 0 20px;
+    padding: 10px 20px;
     background: linear-gradient(90deg, #bf8498f5, #5d3165f2);
     color: white;
     font-weight: bold;
@@ -143,6 +147,10 @@
     .rightexp {
         margin: 3px;
         width:35%;
+    }
+
+    .getButton {
+        left: 30%;
     }
 }
 

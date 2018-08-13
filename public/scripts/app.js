@@ -158,6 +158,7 @@
               navigator.webkitConnection || navigator.msConnection;
       }
 
+
       function updateNetworkInfo(info) {
           // let type = info.type.charAt(0).toUpperCase()+info.type.slice(1);
           document.getElementById('connectivitytpe').innerHTML = info.type + "; " + info.effectiveType;

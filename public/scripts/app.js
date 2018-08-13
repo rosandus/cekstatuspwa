@@ -3,9 +3,6 @@
 
   window.onload = function() {
 
-      // Connection Status
-      document.getElementById('connectionstatus').innerHTML = navigator.onLine ? 'Online' : 'Offline';
-
       // GPS
       document.getElementById('gpsstatus').innerHTML = navigator.geolocation ? 'Yes' : 'No';
       // checkGps();
@@ -164,6 +161,9 @@
       function updateNetworkInfo(info) {
           // let type = info.type.charAt(0).toUpperCase()+info.type.slice(1);
           document.getElementById('connectivitytpe').innerHTML = info.type + "; " + info.effectiveType;
+
+          // Wifi Connection Status
+          document.getElementById('connectionstatus').innerHTML = (navigator.onLine && ((info.type == "undefined") || info.type == "wifi"))? 'Online' : 'Offline';
       }
 
       let info = getConnection();
@@ -267,17 +267,34 @@ lockScreen();
         }
     });
 
+
+// Check PWA is added to home screen
+// isStandalone();
+// function isStandalone() {
+//     // Check if device supports service workers
+//     if (('serviceWorker' in window.navigator)) {alertaddedpwa()};
+//
+//     // Check for Android
+//     if (window.matchMedia('(display-mode: standalone)').matches) {alertaddedpwa()};
+//
+//     // Check for iOS
+//     if (window.navigator["standalone"] == true) {alertaddedpwa()};
+//
+//     return false;
+// }
+//
+// function alertaddedpwa(){
+//     setTimeout(function() { alert("Thank you for installing our app!"); }, 3000);
+// };
+
 // Show Add to Home Screen if previously dismiss
 
-
 // Check notifcation was blocked
-if (Notification.permission !== "granted") {
-    setTimeout(function() { alert("The notification is disabled"); }, 4000);
-}
+// if (Notification.permission !== "granted") {
+//     setTimeout(function() { alert("The notification is disabled"); }, 3000);
 // } else {
 //     alert("The notification is allowed");
 // }
-
 
 // navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
 //     if(PermissionStatus.state == 'granted'){

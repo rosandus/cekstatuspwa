@@ -43,7 +43,7 @@ else{
         },
         // Error Callback
         function(err){
-            displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
+            displayErrorMessage("Your browser doesn't have support for rear camera");
         }
     );
 

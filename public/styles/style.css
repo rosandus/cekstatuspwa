@@ -112,6 +112,7 @@ main {
     height: 100%;
 }
 
+
 @media only screen and (max-width: 380px)
 {
     nav .brand-logo {

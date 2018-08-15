@@ -1,147 +1,148 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Check Webview</title>
+  <title>Check Webview</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="styles/materialize.css">
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/materialize.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 
 
-    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="scripts/apigmaps.js"></script>
-    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
-    <!--&lt;!&ndash;<script type="text/javascript" src="scripts/jquery-3.3.1.js"></script>&ndash;&gt;-->
+  <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="scripts/apigmaps.js"></script>
+  <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+  <!--&lt;!&ndash;<script type="text/javascript" src="scripts/jquery-3.3.1.js"></script>&ndash;&gt;-->
 
-    <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="/manifest.json">
 
-    <!-- Add to home screen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Check Webview">
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
-    <!-- Windows -->
-    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Check Webview">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <!-- Windows -->
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
 
-    <link rel="icon"
-         type="image/png"
-         href="images/icons/icon-144x144.png">
-  </head>
-  <body>
+  <link rel="icon"
+        type="image/png"
+        href="images/icons/icon-144x144.png">
+</head>
+<body>
 
-    <nav>
-        <div class="nav-wrapper blue darken-4">
-            <a href="#" class="brand-logo center">Check Webview</a>
-        </div>
-    </nav>
+<nav>
+  <div class="nav-wrapper blue darken-4">
+    <a href="#" class="brand-logo center">Check Webview</a>
+  </div>
+</nav>
 
-    <!--<main class="container">-->
-    <main>
-      <div class="kotak">
-        <!--<button id="getlocation" class="getButton">Get Location</button>-->
-        <!--<div id="showlocation"></div>-->
+<!--<main class="container">-->
+<main>
+  <div class="kotak">
+    <!--<button id="getlocation" class="getButton">Get Location</button>-->
+    <!--<div id="showlocation"></div>-->
 
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Wifi Connection
-          </div>
-          <div class="exp rightexp">
-            <div id="connectionstatus">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Access to Front Camera
-          </div>
-          <div class="exp rightexp">
-            <div id="frontcamerastatus">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Access to Rear Camera
-          </div>
-          <div class="exp rightexp">
-            <div id="rearcamerastatus">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Connectivity Type
-          </div>
-          <div class="exp rightexp">
-            <div id="connectivitytpe">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Bluetooth Connectivity
-          </div>
-          <div class="exp rightexp">
-            <div id="bluetoothstatus">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Charging Status Battery
-          </div>
-          <div class="exp rightexp">
-            <div id="charging">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Battery Level
-          </div>
-          <div class="exp rightexp">
-            <div id="level">Unknown</div>
-            <!--<div id="dischargingTime">(discharging time unknown)</div>-->
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Device Name
-          </div>
-          <div class="exp rightexp">
-            <div id="devicestatus">Unknown</div>
-          </div>
-        </div>
-        <!--<div class="rowexp">-->
-        <!--<div class="exp leftexp">-->
-        <!--The tap can be performed on all area of the screen-->
-        <!--</div>-->
-        <!--<div class="exp rightexp">-->
-        <!--<div id="tapstatus">Unknown</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <div class="rowexp">
-          <div class="exp leftexp">
-            Accelerometer
-          </div>
-          <div class="exp rightexp">
-            <div id="accestatus">Unknown</div>
-          </div>
-        </div>
-        <div class="rowexp">
-          <div class="exp leftexp">
-            GPS Working
-          </div>
-          <div class="exp rightexp">
-            <div id="gpsstatus">Unknown</div>
-          </div>
-        </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Wifi Connection
       </div>
+      <div class="exp rightexp">
+        <div id="connectionstatus">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Access to Front Camera
+      </div>
+      <div class="exp rightexp">
+        <div id="frontcamerastatus">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Access to Rear Camera
+      </div>
+      <div class="exp rightexp">
+        <div id="rearcamerastatus">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Connectivity Type
+      </div>
+      <div class="exp rightexp">
+        <div id="connectivitytpe">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Bluetooth Connectivity
+      </div>
+      <div class="exp rightexp">
+        <div id="bluetoothstatus">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Charging Status Battery
+      </div>
+      <div class="exp rightexp">
+        <div id="charging">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Battery Level
+      </div>
+      <div class="exp rightexp">
+        <div id="level">Unknown</div>
+        <!--<div id="dischargingTime">(discharging time unknown)</div>-->
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Device Name
+      </div>
+      <div class="exp rightexp">
+        <div id="devicestatus">Unknown</div>
+      </div>
+    </div>
+    <!--<div class="rowexp">-->
+    <!--<div class="exp leftexp">-->
+    <!--The tap can be performed on all area of the screen-->
+    <!--</div>-->
+    <!--<div class="exp rightexp">-->
+    <!--<div id="tapstatus">Unknown</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="rowexp">
+      <div class="exp leftexp">
+        Accelerometer
+      </div>
+      <div class="exp rightexp">
+        <div id="accestatus">Unknown</div>
+      </div>
+    </div>
+    <div class="rowexp">
+      <div class="exp leftexp">
+        GPS Working
+      </div>
+      <div class="exp rightexp">
+        <div id="gpsstatus">Unknown</div>
+      </div>
+    </div>
+  </div>
 
-      <a href="/takephoto.html" class="getButton">Take Your Photo</a>
-    </main>
+  <a href="/takephoto.html" class="getButton" id="frontcamera">Take Your Photo (Front Camera)</a>
+  <a href="/takephoto.html" class="getButton" id="rearcamera">Take Your Photo (Rear Camera)</a>
+</main>
 
-    <script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
 
-  </body>
+</body>
 </html>

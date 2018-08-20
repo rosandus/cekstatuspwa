@@ -12,6 +12,7 @@ var video = document.querySelector('#camera-stream'),
 // The getUserMedia interface is used for handling camera input.
 // Some browsers need a prefix so here we're covering all the options
 navigator.getMedia = ( navigator.getUserMedia ||
+    navigator.mediaDevices.getUserMedia ||
     navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia ||
     navigator.msGetUserMedia);
@@ -22,17 +23,24 @@ if(!navigator.getMedia){
 }
 else{
 
+    var constraints = {
+        audio: false,
+        video: {facingMode: {exact: "environment"}}
+    }
+
     // Request the camera.
     navigator.getMedia(
-        {
-            video: {facingMode: { exact: "environment", }}
-        },
+        constraints,
         // Success Callback
         function(stream){
-
-            // Create an object URL for the video stream and
-            // set it as src of our HTLM video element.
-            video.src = window.URL.createObjectURL(stream);
+            // Older browsers may not have srcObject
+            if ("srcObject" in video){
+                video.srcObject = stream;
+            } else {
+                // Create an object URL for the video stream and
+                // set it as src of our HTLM video element.
+                video.src = window.URL.createObjectURL(stream);
+            }
 
             // Play the video element to start the stream.
             video.play();
@@ -43,7 +51,7 @@ else{
         },
         // Error Callback
         function(err){
-            displayErrorMessage("Your browser doesn't have support for rear camera");
+            displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
         }
     );
 

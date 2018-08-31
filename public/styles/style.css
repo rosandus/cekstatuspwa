@@ -37,9 +37,17 @@ main {
     box-shadow: 0 0px 5px 0 rgba(0,0,0,0);
 }
 
-#showlocation, .get {
+#locationstatus, .get {
     display: -moz-grid-line;
     display: inline;
+}
+
+button#getlocation.getButton {
+    left: 0;
+    margin: 10px;
+}
+#locationstatus {
+    left: 10px;
 }
 
 @-webkit-keyframes Gradient {

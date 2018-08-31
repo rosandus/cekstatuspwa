@@ -223,7 +223,7 @@
                     x.innerHTML = "Geolocation is granted";
                 } else if (result.state === 'prompt') {
                     x.innerHTML = "Wanna show the prompt?";
-                    navigator.geolocation.getCurrentPosition(showPosition);
+                    // navigator.geolocation.getCurrentPosition(showPosition);
                 } else if (result.state === 'denied') {
                     x.innerHTML = "Geolocation is denied"
                 }
@@ -234,10 +234,10 @@
         }
     }
 
-    function showPosition(position) {
-        document.getElementById("showlocation").innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
+    // function showPosition(position) {
+    //     document.getElementById("showlocation").innerHTML = "Latitude: " + position.coords.latitude +
+    //         "<br>Longitude: " + position.coords.longitude;
+    // }
 
     document.getElementById("getlocation").addEventListener("click", getLocation);
 // DEPRECATED

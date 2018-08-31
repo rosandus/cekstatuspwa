@@ -1,10 +1,65 @@
+
+// document.getElementById("getlocation").addEventListener("click", getLocation);
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.permissions.query({name:'geolocation'}).then(function(permissionStatus) {
+//             x.innerHTML = permissionStatus.state;
+//             navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
+//
+//             permissionStatus.onchange = function() {
+//                 x.innerHTML = this.state;
+//             };
+//         });
+        // navigator.permissions.query({name:'geolocation'}).then(function(result) {
+        //     if (result.state === 'granted') {
+        //         x.innerHTML = "Geolocation is granted";
+        //     } else if (result.state === 'prompt') {
+        //         // x.innerHTML = "Wanna show the prompt?";
+        //         // navigator.geolocation.getCurrentPosition(showPosition);
+        //         navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
+        //     } else if (result.state === 'denied') {
+        //         x.innerHTML = "Geolocation is denied"
+        //     }
+        // Don't do anything if the permission was denied.
+//     } else {
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
+
 (function() {
+
     'use strict';
+
+    function showPosition(position) {
+        // document.getElementById("showlocation").innerHTML = "Latitude: " + position.coords.latitude +
+        //     "<br>Longitude: " + position.coords.longitude;
+    }
 
     window.onload = function() {
 
         // GPS
+        var x = document.getElementById("locationstatus");
         document.getElementById('gpsstatus').innerHTML = navigator.geolocation ? 'Yes' : 'No';
+        if (navigator.geolocation) {
+            navigator.permissions.query({name: 'geolocation'}).then(function (permissionStatus) {
+                x.innerHTML = permissionStatus.state;
+                navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
+
+                permissionStatus.onchange = function () {
+                    x.innerHTML = this.state;
+                };
+            });
+        }
+
+        function successHandler(location) {
+            console.log("Success!")
+        }
+        function errorHandler(error) {
+            console.log('Attempt to get location failed: ' + error.message);
+        }
+
         // checkGps();
         // function checkGps() {
         //     if ('geolocation' in navigator) {
@@ -189,7 +244,6 @@
         //     }
         // };
     };
-
 // LOCK SCREEN
     const lockScreen = () => {
         if (window.screen.orientation.type == "portrait") {
@@ -198,6 +252,7 @@
         };
     };
     lockScreen();
+
 // screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 // screen.lockOrientationUniversal("portrait");
 // if (screen.lockOrientationUniversal("landscape-primary")) {
@@ -214,32 +269,19 @@
 // };
 
 // ENABLE GPS
-    var x = document.getElementById("locationstatus");
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.permissions.query({name:'geolocation'}).then(function(result) {
-                if (result.state === 'granted') {
-                    x.innerHTML = "Geolocation is granted";
-                } else if (result.state === 'prompt') {
-                    x.innerHTML = "Wanna show the prompt?";
-                    // navigator.geolocation.getCurrentPosition(showPosition);
-                } else if (result.state === 'denied') {
-                    x.innerHTML = "Geolocation is denied"
-                }
-                // Don't do anything if the permission was denied.
-            });
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    // function showPosition(position) {
-    //     document.getElementById("showlocation").innerHTML = "Latitude: " + position.coords.latitude +
-    //         "<br>Longitude: " + position.coords.longitude;
+    // if ('geolocation' in navigator) {
+    //     document.getElementById('askButton').addEventListener('click', function () {
+    //         target.innerText = "haha aneh?";
+    //         navigator.geolocation.getCurrentPosition(function (location) {
+    //             appendLocation(location, 'fetched');
+    //         });
+    //         watchId = navigator.geolocation.watchPosition(appendLocation);
+    //     });
+    // } else {
+    //     target.innerText = 'Geolocation API not supported.';
     // }
 
-    document.getElementById("getlocation").addEventListener("click", getLocation);
+
 // DEPRECATED
 //     jQuery('#getlocation').on('click',function(){
 //         var geocoder = new google.maps.Geocoder();
